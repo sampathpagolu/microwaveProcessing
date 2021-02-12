@@ -24,7 +24,13 @@ My microwave always displays the wrong time, I could change it to show correct t
 
 __Common sequence 1__: I am hungry and I want to cook some rice for myself. I have to cook the rice in Microwave oven for approximately 20 minutes. This time varies according to the quantity of rice I am cooking. For suppose one day I am cooking extra rice, I have to put in more time. If I make a mistake in entering the time I have to start again. If I put less time, I can add more time by clicking on "add 30 sec" button. What if I want to add 5 minutes, I have to click 10 times to add 5 minutes.
 
-__Solution__: Replace the buttons with something more tactile. Buttons which are clickable are more comfortable, they also provide a haptic feedback that can be super helpful.
+<img src="./project-photos/ricecook.gif" width="300">
+
+__Solution__:
+- Replace the buttons with something more tactile. Buttons which are clickable are more comfortable, they also provide a haptic feedback that can be super helpful.
+- Remove the buttons entirely for setting and time introduce a dial for easy setting of the time.
+
+<img src="./project-photos/dial.png" width="200">
 
 #### Display
 
