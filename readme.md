@@ -48,8 +48,5 @@ When I check the display, I see in very tiny letters saying cook. Now I have to 
 __Solution__: Add different colored LEDs to give the user feedback on what is being displayed at the moment. A red LED can be used to display the timer like in the image below. Now a days LEDs can show multiple colors according to the voltage fed to them. If those LEDs are used, different colors can be displayed.
 
 <img src="./project-photos/timer.PNG" width="200">
-<<<<<<< HEAD
 
 Alternatively, a new feature can be added to the microwave. If cooking stops in the middle, the timer should reset after a certain period of time. There is no use in preserving the remaining cooking time hours after the timer is stopped in the middle.
-=======
->>>>>>> c43b947cf675109c93178d3ec9d8a0eefdf20dc3
