@@ -19,70 +19,32 @@ public void settings() {
   public void draw() {
     boolean clicked_go = false;
     boolean clicked_stop = false;
-    boolean clicked_start = false;
-    while(!clicked_start){
-      screen_1();
-      clicked_start = clicked_start(640, 280, 150, 70);
-      if (!clicked_start) break;
+    screen_1();
+    boolean clicked_start = clicked_start(640, 280, 150, 70);
+    if (clicked_start){
+      println("clicked");
+    }
+    else if(clicked_go){
+      
+    }
+    else if(clicked_stop){
     }
     
-    while (clicked_start){
-      println("clicked");
-      screen_2();
-      
-      clicked_go = true;
-      if (clicked_go){
-        clear();
-        break;
-      };
-    }
-
-  }
     
   //screen 3 displays remaining time, add 30 sec option, add minute option. 
+  }
   void screen_3(){
-    background(0);
-    fill(255);
-    reset_stroke();
-    rect(100, 60, 720, 360);
-    screenSeparator();
     
   }
   /* screen 3 functions */
-  
-  void remaining_time(){
-  }
-  void add_30sec(){
-  }
-  void add_1min(){
-  }
-  void open_dial(){
-  }
-  void stop_button(){
-  }
   
   /* end screen 3 functions
   -----------------------------------------------------------*/
   // screen 2 displays time set, option to set time, power level
   void screen_2(){
-    background(0);
-    fill(255);
-    reset_stroke();
-    rect(100, 60, 720, 360);
-    screenSeparator();
-    
     
   }
   /* screen 2 functions */
-  void timer_display(){
-  }
-  void timer_update(){
-  }
-  void power_level(){
-  }
-  //boolean clicked_go(){
-  
-  //}
   
   /* end screen 2 functions
   -----------------------------------------------------------*/
