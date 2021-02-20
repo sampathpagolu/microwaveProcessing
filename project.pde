@@ -1,5 +1,6 @@
 
-
+import controlP5.*;
+ControlP5 cp5;
 
 public void settings() {
 
@@ -20,22 +21,22 @@ public void settings() {
     boolean clicked_go = false;
     boolean clicked_stop = false;
     boolean clicked_start = false;
-    while(!clicked_start){
-      screen_1();
-      clicked_start = clicked_start(640, 280, 150, 70);
-      if (!clicked_start) break;
-    }
+    //while(!clicked_start){
+    //  screen_1();
+    //  clicked_start = clicked_start(640, 280, 150, 70);
+    //  if (!clicked_start) break;
+    //}
     
-    while (clicked_start){
-      println("clicked");
+    //while (clicked_start){
+    //  println("clicked");
       screen_2();
       
-      clicked_go = true;
-      if (clicked_go){
-        clear();
-        break;
-      };
-    }
+      //clicked_go = true;
+      //if (clicked_go){
+      //  clear();
+      //  break;
+      //};
+    //}
 
   }
     
@@ -70,16 +71,36 @@ public void settings() {
     reset_stroke();
     rect(100, 60, 720, 360);
     screenSeparator();
+    reset_stroke();
+    stroke(1);
+    fill(255);
+    timer_update();
+    power_level();
+    
     
     
   }
   /* screen 2 functions */
   void timer_display(){
+    
   }
   void timer_update(){
+  // fill(255);
+  // cp5 = new ControlP5(this
+  // //cp5.addKnob("v1")
+  // //    .setPositions(
+   
   }
-  void power_level(){
-  }
+  //void power_level(){
+  //  int v1;
+  //  cp5 = new ControlP5(this);
+  //  cp5.addSlider("v1")
+  //     .setPosition(620, 350)
+  //     .setSize(200, 20)
+  //     .setRange(100, 300)
+  //     .setValue(250)
+  //     .setColorCaptionLabel(color(20,20,20));
+  //}
   //boolean clicked_go(){
   
   //}
@@ -111,10 +132,13 @@ public void settings() {
     int hours_1 = floor(hour/10);
     int minutes_10 = minute%10;
     int minutes_1 = floor(minute/10);
-    sevenSegment_screen1(nums[hours_1], a );
-    sevenSegment_screen1(nums[hours_10], a + 40);
-    sevenSegment_screen1(nums[minutes_1], a + 90);
-    sevenSegment_screen1(nums[minutes_10], a + 130);
+    int red = 255;
+    int green = 0;
+    int blue = 0;
+    sevenSegment(nums[hours_1], a, red, green, blue );
+    sevenSegment(nums[hours_10], a + 40, red, green, blue);
+    sevenSegment(nums[minutes_1], a + 90, red, green, blue);
+    sevenSegment(nums[minutes_10], a + 130, red, green, blue);
     fill(255,0,0);
     circle(713, 120, 8);
     circle(713, 155, 8);
@@ -162,41 +186,41 @@ public void settings() {
   }
   
   
-  color getColor(int val, int shift) {
-    int r = 255;
-    int g = 0;
-    int b = 0;
+  color getColor(int val, int shift, int red, int green, int blue) {
+    int r = red;
+    int g = green;
+    int b = blue;
     int a = 40+255 * ((val >> shift) & 1);
     return color(r, g, b, a);
   }
 
 
-  public void sevenSegment_screen1(int val, int x) {
+  public void sevenSegment(int val, int x, int red, int green, int blue) {
     reset_stroke();
     pushMatrix();
     noStroke();
     noFill();
     
     // A
-    fill(getColor(val, 6));
+    fill(getColor(val, 6, red, green, blue));
     rect(640+x, 100, 22, 5, 10, 10, 0, 0);
     // B
-    fill(getColor(val, 5));
+    fill(getColor(val, 5, red, green, blue));
     rect(660+x, 110, 5, 22, 10, 10, 0, 0);
     // C
-    fill(getColor(val, 4));
+    fill(getColor(val, 4, red, green, blue));
     rect(662+x, 140, 5, 22, 10, 10, 0, 0);
     // D
-    fill(getColor(val, 3));
+    fill(getColor(val, 3, red, green, blue));
     rect(640+x, 165, 22, 5, 10, 10, 0, 0);
     // E
-    fill(getColor(val, 2));
+    fill(getColor(val, 2, red, green, blue));
     rect(632+x, 140, 5, 22, 10, 10, 0, 0);
     // F
-    fill(getColor(val, 1));
+    fill(getColor(val, 1, red, green, blue));
     rect(630+x, 110, 5, 22, 10, 10, 0, 0);
     // 
-    fill(getColor(val, 0));
+    fill(getColor(val, 0, red, green, blue));
     rect(640+x, 135, 22, 5, 10, 10, 0, 0);
 
     popMatrix();
