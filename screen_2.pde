@@ -1,8 +1,10 @@
  // screen 2 displays time set, option to set time, power level
 int knobValue = 0;
+ListMultimap<Integer, Integer> time_ref = ArrayListMultimap.create();
+List<Integer> time;
  void screen_2() {
-    int[] time = {0,0,0,0};
-     
+   int[] reference = {0, 30, 1, 3, 5, 10, 301, 45, 60, 90 };
+     String minutes_or_seconds = "Seconds";
     //println("clicked");
     background(0);
     fill(255);
@@ -13,72 +15,99 @@ int knobValue = 0;
     stroke(1);
     fill(255);
     cp5.show();
-    time = timer_update(time);
+    init_time_ref();
+    int cook_time = reference[knobValue];
+    time =  time_ref.get(cook_time);
+    //println(time);
     timer_display(time);
+    if (knobValue >= 2) minutes_or_seconds = "Minutes";
+    if (cook_time == 301) cook_time = 30;
+    //start
+    go();
+    clicked_go = clicked_go_func(655, 370, 110, 30, cook_time, minutes_or_seconds);
+    
     
     
     
  }
  /* screen 2 functions */
 
-void timer_display(int[] time_now){
+void timer_display(List<Integer> time_now){
    int a = 0;
-   int red = 255;
-   int green = 218;
-   int blue = 0;
-  display_seven_segment(time_now[0], time_now[1], time_now[2], time_now[3], red, green, blue, a);
+   int red = 38;
+   int green = 148;
+   int blue = 15;
+  display_seven_segment(time_now.get(0),time_now.get(1),time_now.get(2),time_now.get(3), red, green, blue, a);
    
  }
- int[] timer_update(int[] time){
-    float counter = 0;
-    rect(700, 250, 75, 75);
-    counter = get_clicked(720, 300, 75, counter);
-    get_time(time, counter);
-    
-    
-  //include_knob();
-  
-  return time;
- }
-  float get_clicked(int x, int y, int diameter, float counter){
-    
-  if (mouseX >= x && mouseX <= x+diameter && 
-     mouseY >= y && mouseY <= y+diameter) {
-     while(mousePressed){
-   //tts.speak("Going to the cook screen");
-    counter +=0.25; 
-    if (counter == 60){
-    break;
-  }
- }
- println(counter);
- 
-  }return counter;
-  }
-void get_time(int[] time, float counter){
-    int minutes = floor(counter);
-   int seconds = (int) counter - minutes;
-   time[0] = minutes%10;
-   time[1] = floor(minutes/10);
-   time[2] = (int) seconds%10;
-   time[3] = floor(seconds/10);
 
-  }
+void init_time_ref(){
+time_ref.put(0,0);
+    time_ref.put(0,0);
+    time_ref.put(0,0);
+    time_ref.put(0,0);
+    //30 seconds
+    time_ref.put(30,0);
+    time_ref.put(30,0);
+    time_ref.put(30,3);
+    time_ref.put(30,0);
+    // 1 minute
+    time_ref.put(1, 0);
+    time_ref.put(1,1);
+    time_ref.put(1,0);
+    time_ref.put(1,0);
+    //3 minutes
+    time_ref.put(3, 0);
+    time_ref.put(3,3);
+    time_ref.put(3,0);
+    time_ref.put(3,0);
+    // 5 minutes
+    time_ref.put(5,0);
+    time_ref.put(5,5);
+    time_ref.put(5,0);
+    time_ref.put(5,0);
+    // 10 minutes
+    time_ref.put(10, 1);
+    time_ref.put(10,0);
+    time_ref.put(10,0);
+    time_ref.put(10,0);
+    //30 minutes
+    time_ref.put(301,3);
+    time_ref.put(301,0);
+    time_ref.put(301,0);
+    time_ref.put(301,0);
+    // 45 minutes
+    time_ref.put(45, 4);
+    time_ref.put(45,5);
+    time_ref.put(45,0);
+    time_ref.put(45,0);
+    //60 minutes
+    time_ref.put(60, 6);
+    time_ref.put(60,0);
+    time_ref.put(60,0);
+    time_ref.put(60,0);
+    //90 minutes
+    time_ref.put(90, 9);
+    time_ref.put(90,0);
+    time_ref.put(90,0);
+    time_ref.put(90,0);
+ 
+}
  void include_knob(){ 
   cp5 = new ControlP5(this);
  
   
     
     myKnobB = cp5.addKnob("knobValue")
-              .setRange(0,60)
+              .setRange(1,9)
               .setValue(0)
-              .setPosition(660,210)
+              .setPosition(660,200)
               .setRadius(50)
-              .setNumberOfTickMarks(12)
+              .setNumberOfTickMarks(10)
               .setTickMarkLength(4)
               .snapToTickMarks(true)
               .setColorForeground(color(255))
-              .setColorBackground(color(0, 160, 100))
+              .setColorBackground(color(81, 81, 81))
               .setColorActive(color(255,255,0))
               .setDragDirection(2)
               ;
@@ -86,9 +115,9 @@ void get_time(int[] time, float counter){
  }
  void power_slider(){
    
- cp5 = new ControlP5(this);
+ //cp5 = new ControlP5(this);
  cp5.addSlider("Power")
-     .setPosition(640,380)
+     .setPosition(640,320)
      .setSize(150, 25)
      //.setWidth(200)
      .setRange(800, 1200) // values can range from big to small as well
@@ -102,9 +131,27 @@ void get_time(int[] time, float counter){
     
 
 }
- //}
+void go(){
+   stroke(84, 220, 47);
+   strokeWeight(2);
+   fill(255);
+   rect(655, 370, 110, 30, 3, 3, 3, 3);
+   textSize(22);
+   fill(84, 220, 47);
+   text("Go", 690, 393);
 
- 
- 
+
+   
+ }
+int clicked_go_func(int x, int y, int width_, int height_, int cook_time, String minutes_or_seconds){
+  
+  if (mouseX >= x && mouseX <= x+width_ && 
+     mouseY >= y && mouseY <= y+height_ && mousePressed && cook_time != 0) {
+   tts.speak("Your food will now cook for" + cook_time + minutes_or_seconds);
+   return 1;
+ } else {
+   return 0;
+ }
+}
  /* end screen 2 functions
  -----------------------------------------------------------*/

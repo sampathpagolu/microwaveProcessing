@@ -5,6 +5,8 @@
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.2'>
   <title>Microwave redesign</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+<link href="./style.css" rel="stylesheet" >
 </head>
 
 <body>
@@ -13,25 +15,27 @@
 
   <p> I am using my home microwave oven for this project.</p>
 
-  <img src="./project-photos/microwave.jpg" width="200">
+  <img src="./project-photos/microwave.jpg" width="200" id ="main">
   <div id="problems">
     <h2>Problems with my microwave</h2>
-    <ul>
-      <li> Buttons</li>
-      <li>Display</li>
-      <li>Stop/Clear Button</li>
-      <li>Power level</li>
-    </ul>
+
+      <p class="problems"><a class="problem" href=#Buttons>Buttons</a></p>
+      <p class="problems"><a class="problem" href=#Display>Display</a></p>
+      <p class="problems"><a class="problem" href=#stop_clear>Stop/Clear Button</a></p>
+      <p class="problems"><a class="problem" href=#power_level>Power level</a></p>
+
   </div>
   <div id="Buttons" class="problem">
+
     <h3>Buttons</h3>
-    <img src="./project-photos/buttons.gif" width="300">
+    <a href=#problems id="top"> To the top &#10595; </a></br>
+    <img src="./project-photos/buttons.gif" width="300"id = "buttons">
 
 
     <p><b>Common usage</b>: Buttons are the most used feature on a Microwave.
 
       My microwave has 25 buttons in total. Each and every button when pressed
-      plays a beep as sound <i>feedback</i> to the user. More options equals more
+      plays a beep as sound <i><u>feedback</i></u> to the user. More options equals more
       complexity. Keeping that aside, the major flaw in my Microwave's design
       is Buttons are very hard to press.
 
@@ -47,23 +51,24 @@
       I can add more time by clicking on "add 30 sec" button. What if I want to
       add 5 minutes, I have to click 10 times to add 5 minutes.</p>
 
-    <img src="./project-photos/ricecook.gif" width="300">
+    <img src="./project-photos/ricecook.gif" width="300" id="ricecook">
 
     <p><b>Solution</b>:</p>
     <p>
     <ul>
       <li>Replace the buttons with something more tactile. Buttons which are
-        clickable are more comfortable, they also provide a haptic <i>feedback</i>
+        clickable are more comfortable, they also provide a haptic <i><u>feedback</i></u>
         that can be super helpful.</li>
       <li>Remove the buttons entirely for setting and time introduce a dial for
         easy setting of the time.</li>
     </ul>
     </p>
-    <img src="./project-photos/dial.png" width="200">
+    <img src="./project-photos/dial.png" width="200" id= "dial">
+    <img src="./project-photos/timeknob.jpg" width="400" id= "timeknob">
   </div>
   <div id="Display" class="problem">
     <h3>Display</h3>
-
+<a href=#problems id="top"> To the top &#10595;</a></br>
     <p>
       My Microwave has a tiny display, that is good enough to set the time,
       see the remaining time or check the time of the day.
@@ -74,11 +79,11 @@
       and I want to drink some tea. I go to the kitchen to heat the water for my
       tea I pour water into cup and put it in the Microwave oven and start cooking
       by pressing down onone of the express cook options. It beeps twice, giving
-      me <i>feedback</i> that timer is already set for something else.
+      me <i><u>feedback</i></u> that timer is already set for something else.
     </p>
 
-    <img src="./project-photos/display.jpg" width="200">
-    <img src="./project-photos/display.gif" width="350">
+    <img src="./project-photos/display.jpg" width="200" id="display1">
+    <img src="./project-photos/display.gif" width="350"id="display2">
 
     <p>
       First image is when timer is set. Second Image is Time of the day.
@@ -93,14 +98,14 @@
     </p>
 
     <p>
-      <b>Solution</b>: Add different colored LEDs to give the user <i>feedback</i>
+      <b>Solution</b>: Add different colored LEDs to give the user <i><u>feedback</i></u>
       on what is being displayed at the moment. A red LED can be used to display
       the timer like in the image below. Now a days LEDs can show multiple colors
       according to the voltage fed to them. If those LEDs are used, different
        colors can be displayed.
     </p>
 
-    <img src="./project-photos/timer.PNG" width="200">
+    <img src="./project-photos/timer.PNG" width="200" id="timer">
 
     <p>
       Alternatively, a new feature can be added to the microwave. If cooking
@@ -111,7 +116,8 @@
   </div>
   <div id="stop_clear" , class="problem">
     <h4> Stop/Clear button </h4>
-    <img src="./project-photos/stop_clear.jpg" width="200">
+    <a href=#problems id="top"> To the top &#10595; </a></br>
+    <img src="./project-photos/stop_clear.jpg" width="200" id="stop_clear">
     <p>
       The stop/clear button on my microwave has a small closed and open lock saying
       "hold"
@@ -123,22 +129,27 @@
   </div>
   <div id="power_level" class="problem">
     <h3> Power level </h3>
+    <a href=#problems id="top"> To the top &#10595; </a></br>
     <p>
       One of the <b>Rare uses</b> that I can think of is selecting the power level
       for the cooking. Once in a lifetime I will try a recepie which will tell me
       to select the power level. I have tried it in the past and I was not able to
-      figure it out how to set the power level.<i>Microwave telling me how to
-      use this option </i>This control unit has only one mechanism of telling me
+      figure it out how to set the power level.<i><u>Microwave telling me how to
+      use this option </i></u>This control unit has only one mechanism of telling me
       that it is the wrong option, which is beeping twice.
     </p>
     <p>
       while working this report I was able to figure out how to select power level.
        Even though I was able to figure it out after few tries(while hurting my fingers)
-       I was still confused on what the numbers meant. <i>Common mistake</i>
+       I was still confused on what the numbers meant. <i><u>Common mistake</i></u>
        I was confused on when to select the power level, before clicking start or
        after start as I was able to change power level to some unknown level.
        See the below gif.
     </p>
-    <img src="./project-photos/power_level.gif" width="400">
+    <img src="./project-photos/power_level.gif" width="400" id="power_level">
+  </div>
+  <div id=solution>
+    <h2>Solution:</h2>
+      <img src="./project-photos/screens.png" width="800" id="screens">
   </div>
 </body>

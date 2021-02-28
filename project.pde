@@ -1,10 +1,33 @@
+//Import Guava
+import com.google.common.annotations.*;
+import com.google.common.base.*;
+import com.google.common.base.internal.*;
+import com.google.common.cache.*;
+import com.google.common.collect.*;
+import com.google.common.escape.*;
+import com.google.common.eventbus.*;
+import com.google.common.graph.*;
+import com.google.common.hash.*;
+import com.google.common.html.*;
+import com.google.common.io.*;
+import com.google.common.math.*;
+import com.google.common.net.*;
+import com.google.common.primitives.*;
+import com.google.common.reflect.*;
+import com.google.common.util.concurrent.*;
+import com.google.common.xml.*;
+import com.google.thirdparty.publicsuffix.*;
+
 import guru.ttslib.*;
 import controlP5.*;
+
+import java.util.List;
 
 ControlP5 cp5;
 TTS tts;
 
-int clicked_start = 0;
+int clicked_start = 1;
+int clicked_go = 1;
 Knob myKnobB;
 
 void settings() {
@@ -16,8 +39,8 @@ void settings() {
 
 void setup() {
     tts = new TTS();
-   //include_knob();
-   frameRate(1);
+   include_knob();
+       
    power_slider();
     
  }
@@ -25,39 +48,24 @@ void setup() {
 void draw() {
     
     // first screen
-    while(clicked_start == 0) {
-        screen_1();
-        clicked_start = clicked_start_func(640, 280, 150, 70);
-        break;
-    }  
-    // second screen
-    while(clicked_start == 1) {
-        //println("in second while");
-        screen_2();
-        break;
+    //while(clicked_start == 0) {
+    //    screen_1();
+    //    break;
+    //}  
+    //// second screen
+    //while(clicked_start == 1 && clicked_go == 0) {
+    //    screen_2();
+    //    break;
+    //}
+    //third screen
+    while(clicked_go == 1){
+      screen_3();
+      break;
     }
     
  }
    
- 
 
- 
- 
- // screen 1 displays time, date and start button
- void screen_1() {
-    background(0);
-    fill(255);
-    reset_stroke();
-    rect(100, 60, 720, 360);
-    screenSeparator();
-    today_time();
-    today_date();
-    fill(255);
-    startButton();
-    
-    
- }
- 
  void reset_stroke(){
    noStroke();
    strokeWeight(1);
