@@ -24,7 +24,8 @@
 int clicked_start_func(int x, int y, int width_, int height_){
   if (mouseX >= x && mouseX <= x+width_ && 
      mouseY >= y && mouseY <= y+height_ && mousePressed) {
-   tts.speak("Please insert your food into the door and select a time to cook");
+   tts.speak("clicked start");
+   //clicked_go = 0;
    return 1;
  } else {
    return 0;

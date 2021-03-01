@@ -1,16 +1,20 @@
  // screen 2 displays time set, option to set time, power level
-int knobValue = 0;
-ListMultimap<Integer, Integer> time_ref = ArrayListMultimap.create();
-List<Integer> time;
+
  void screen_2() {
    int[] reference = {0, 30, 1, 3, 5, 10, 301, 45, 60, 90 };
      String minutes_or_seconds = "Seconds";
+     pause = false;
     //println("clicked");
     background(0);
     fill(255);
     reset_stroke();
     rect(100, 60, 720, 360);
     screenSeparator();
+    fill(0);
+    textSize(12);
+    text("Click on the knob to set time ", 620, 190);
+    text("powerlevel ", 620, 315);
+
     reset_stroke();
     stroke(1);
     fill(255);
@@ -20,14 +24,9 @@ List<Integer> time;
     time =  time_ref.get(cook_time);
     //println(time);
     timer_display(time);
-    if (knobValue >= 2) minutes_or_seconds = "Minutes";
-    if (cook_time == 301) cook_time = 30;
     //start
     go();
-    clicked_go = clicked_go_func(655, 370, 110, 30, cook_time, minutes_or_seconds);
-    
-    
-    
+    clicked_go = clicked_go_func(655, 370, 110, 30, cook_time);
     
  }
  /* screen 2 functions */
@@ -106,7 +105,7 @@ time_ref.put(0,0);
               .setNumberOfTickMarks(10)
               .setTickMarkLength(4)
               .snapToTickMarks(true)
-              .setColorForeground(color(255))
+              .setColorForeground(color(0))
               .setColorBackground(color(81, 81, 81))
               .setColorActive(color(255,255,0))
               .setDragDirection(2)
@@ -117,7 +116,7 @@ time_ref.put(0,0);
    
  //cp5 = new ControlP5(this);
  cp5.addSlider("Power")
-     .setPosition(640,320)
+     .setPosition(640,330)
      .setSize(150, 25)
      //.setWidth(200)
      .setRange(800, 1200) // values can range from big to small as well
@@ -126,8 +125,7 @@ time_ref.put(0,0);
      .setSliderMode(Slider.FLEXIBLE)
      ;
      cp5.hide();
-  // use Slider.FIX or Slider.FLEXIBLE to change the slider handle
-  // by default it is Slider.FIX
+
     
 
 }
@@ -143,11 +141,11 @@ void go(){
 
    
  }
-int clicked_go_func(int x, int y, int width_, int height_, int cook_time, String minutes_or_seconds){
+int clicked_go_func(int x, int y, int width_, int height_, int cook_time){
   
   if (mouseX >= x && mouseX <= x+width_ && 
      mouseY >= y && mouseY <= y+height_ && mousePressed && cook_time != 0) {
-   tts.speak("Your food will now cook for" + cook_time + minutes_or_seconds);
+     tts.speak("your food is now cooking");
    return 1;
  } else {
    return 0;

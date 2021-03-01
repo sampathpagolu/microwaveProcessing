@@ -26,10 +26,13 @@ import java.util.List;
 ControlP5 cp5;
 TTS tts;
 
-int clicked_start = 1;
-int clicked_go = 1;
+int clicked_start = 0;
+int clicked_go = 0;
+int door_status = 0;
 Knob myKnobB;
-
+int knobValue = 0;
+ListMultimap<Integer, Integer> time_ref = ArrayListMultimap.create();
+List<Integer> time;
 void settings() {
     size(1000, 500);
  }
@@ -38,7 +41,7 @@ void settings() {
  int index = 0;
 
 void setup() {
-    tts = new TTS();
+   tts = new TTS();
    include_knob();
        
    power_slider();
@@ -46,19 +49,20 @@ void setup() {
  }
 
 void draw() {
-    
-    // first screen
-    //while(clicked_start == 0) {
-    //    screen_1();
-    //    break;
-    //}  
-    //// second screen
-    //while(clicked_start == 1 && clicked_go == 0) {
-    //    screen_2();
-    //    break;
-    //}
+    println( "x: " + mouseX + " y: " + mouseY );
+     //first screen
+    door_status = door_func();
+    while(clicked_start == 0)  {
+        screen_1();
+        break;
+    }  
+    // second screen
+    while(clicked_start == 1 && clicked_go == 0 && door_status==0) {
+        screen_2();
+        break;
+    }
     //third screen
-    while(clicked_go == 1){
+    while(clicked_go == 1 && clicked_start == 1){
       screen_3();
       break;
     }
@@ -115,6 +119,22 @@ void draw() {
 
    popMatrix();
  }
+void reset(){
+  clicked_go = 0;
+  clicked_start = 0;
+}
+int door_func(){
+  fill(255);
+  rect(580, 230, 25, 55);
+  if (mouseX >= 860 && mouseX <= 860+25 && 
+     mouseY >=200  && mouseY <= 200+55 && mousePressed) {
+      fill(84, 220, 47);
+      rect(860, 200,25, 55);
+   return 1;
+ } else {
+   return 0;
+ }
  
+}
  
  

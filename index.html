@@ -6,150 +6,208 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.2'>
   <title>Microwave redesign</title>
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
-<link href="./style.css" rel="stylesheet" >
+  <link href="./style.css" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Human Computer Interaction - Project 1</h1>
-  <h2> Lakshmi Sampath Pagolu</h2>
+  <h1 id="heading">Human Computer Interaction</h1>
+  <h2 id="heading">project 1</h1>
+    <h2> Lakshmi Sampath Pagolu</h2>
 
-  <p> I am using my home microwave oven for this project.</p>
+    <p> I am using my home microwave oven for this project.</p>
 
-  <img src="./project-photos/microwave.jpg" width="200" id ="main">
-  <div id="problems">
-    <h2>Problems with my microwave</h2>
+    <img id="pro_img" src="./project-photos/microwave.jpg" width="200" id="main">
+    <div id="problems">
+      <h2>Problems with my microwave</h2>
+      <p>
+        Click on one of the boxes to jump to the problem.
+      </p>
+      <table>
+        <tr>
+          <td>
+            <p class="problems"><a class="problem" href=#Buttons>Buttons</a></p>
+          </td>
+          <td>
+            <p class="problems"><a class="problem" href=#Display>Display</a></p>
+          </td>
+          <td>
+            <p class="problems"><a class="problem" href=#stop_clear>Stop/Clear</a></p>
+          </td>
+          <td>
+            <p class="problems"><a class="problem" href=#power_level>Power level</a></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="Buttons" class="problem">
 
-      <p class="problems"><a class="problem" href=#Buttons>Buttons</a></p>
-      <p class="problems"><a class="problem" href=#Display>Display</a></p>
-      <p class="problems"><a class="problem" href=#stop_clear>Stop/Clear Button</a></p>
-      <p class="problems"><a class="problem" href=#power_level>Power level</a></p>
-
-  </div>
-  <div id="Buttons" class="problem">
-
-    <h3>Buttons</h3>
-    <a href=#problems id="top"> To the top &#10595; </a></br>
-    <img src="./project-photos/buttons.gif" width="300"id = "buttons">
+      <h3>Buttons</h3>
+      <a href=#heading id="top"> To the top &#10595; </a></br>
+      <img id="pro_img" src="./project-photos/buttons.gif" width="300" id="buttons">
 
 
-    <p><b>Common usage</b>: Buttons are the most used feature on a Microwave.
+      <p><b>Common usage</b>: Buttons are the most used feature on a Microwave.
 
-      My microwave has 25 buttons in total. Each and every button when pressed
-      plays a beep as sound <i><u>feedback</i></u> to the user. More options equals more
-      complexity. Keeping that aside, the major flaw in my Microwave's design
-      is Buttons are very hard to press.
+        My microwave has 25 buttons in total. Each and every button when pressed
+        plays a beep as sound <i><u>feedback</i></u> to the user. More options equals more
+        complexity. Keeping that aside, the major flaw in my Microwave's design
+        is Buttons, which are very hard to press.
 
-      My microwave always displays the wrong time, I could change it to show
-      correct the time and I have tried, gave up halfway because my finger
-       started to hurt.
-    </p>
-    <p><b>Common sequence</b>: I am hungry and I want to cook some rice for
-      myself. I have to cook the rice in Microwave oven for approximately 20 minutes.
-      This time varies according to the quantity of rice I am cooking. For suppose
-      one day I am cooking extra rice, I have to put in more time. If I make a
-      mistake in entering the time I have to start again. If I put less time,
-      I can add more time by clicking on "add 30 sec" button. What if I want to
-      add 5 minutes, I have to click 10 times to add 5 minutes.</p>
+        My microwave always displays the wrong time, I could change it to show
+        correct the time and I have tried, gave up halfway because my finger
+        started to hurt.
+      </p>
+      <p>Feedback:</p>
+      <audio controls src="./audio/feedback1.mp3">
+        Your browser does not support the
+        <code>audio</code> element.
 
-    <img src="./project-photos/ricecook.gif" width="300" id="ricecook">
+        <p><b>Common sequence</b>: I am hungry and I want to cook some rice for
+          myself. I have to cook the rice in Microwave oven for approximately 20 minutes.
+          This time varies according to the quantity of rice I am cooking. For suppose
+          one day I am cooking extra rice, I have to put in more time. If I make a
+          mistake in entering the time I have to start again. If I put less time,
+          I can add more time by clicking on "add 30 sec" button. What if I want to
+          add 5 minutes, I have to click 10 times to add 5 minutes.</p>
 
-    <p><b>Solution</b>:</p>
-    <p>
-    <ul>
-      <li>Replace the buttons with something more tactile. Buttons which are
-        clickable are more comfortable, they also provide a haptic <i><u>feedback</i></u>
-        that can be super helpful.</li>
-      <li>Remove the buttons entirely for setting and time introduce a dial for
-        easy setting of the time.</li>
-    </ul>
-    </p>
-    <img src="./project-photos/dial.png" width="200" id= "dial">
-    <img src="./project-photos/timeknob.jpg" width="400" id= "timeknob">
-  </div>
-  <div id="Display" class="problem">
-    <h3>Display</h3>
-<a href=#problems id="top"> To the top &#10595;</a></br>
-    <p>
-      My Microwave has a tiny display, that is good enough to set the time,
-      see the remaining time or check the time of the day.
-    </p>
+        <img id="pro_img" src="./project-photos/ricecook.gif" width="300" id="ricecook">
 
-    <p>
-      <b>Common sequence/Common mistake</b>: I am very stressed due to a project submission
-      and I want to drink some tea. I go to the kitchen to heat the water for my
-      tea I pour water into cup and put it in the Microwave oven and start cooking
-      by pressing down onone of the express cook options. It beeps twice, giving
-      me <i><u>feedback</i></u> that timer is already set for something else.
-    </p>
+        <p><b>Solution</b>:</p>
+        <p>
+          <ul>
+            <li>Replace the buttons with something more tactile. Buttons which are
+              clickable are more comfortable, they also provide a haptic <i><u>feedback</i></u>
+              that can be super helpful.</li>
+            <li>Remove the buttons entirely for setting and time introduce a dial for
+              easy setting of the time.</li>
+          </ul>
+        </p>
+        <img id="pro_img" src="./project-photos/dial.png" width="200" id="dial">
+        <img id="pro_img" src="./project-photos/timeknob.jpg" width="400" id="timeknob">
+    </div>
+    <div id="Display" class="problem">
+      <h3>Display</h3>
+      <p>
+        My Microwave has a tiny display, that is good enough to set the time,
+        see the remaining time or check the time of the day.
+      </p>
 
-    <img src="./project-photos/display.jpg" width="200" id="display1">
-    <img src="./project-photos/display.gif" width="350"id="display2">
+      <p>
+        <b>Common sequence/Common mistake</b>: I am very stressed due to a project submission
+        and I want to drink some tea. I go to the kitchen to heat the water for my
+        tea I pour water into cup and put it in the Microwave oven and start cooking
+        by pressing down onone of the express cook options. It beeps twice, giving
+        me <i><u>feedback</i></u> that timer is already set for something else.
+      </p>
 
-    <p>
-      First image is when timer is set. Second Image is Time of the day.
-    </p>
+      <img id="pro_img" src="./project-photos/display.jpg" width="200" id="display1">
+      <img id="pro_img" src="./project-photos/display.gif" width="350" id="display2">
 
-    <p>
-      When I check the display, I see in very tiny letters saying cook. Now I
-      have to click start/stop button or reset it and give a new time. This
-      seemingly small clicks to heat my water is very annoying. Even though
-      there is some indication that time of the day is being displayed like ':'
-      is blinking which is hardly noticeable at a single glance.
-    </p>
+      <p>
+        First image is when timer is set. Second Image is Time of the day.
+      </p>
 
-    <p>
-      <b>Solution</b>: Add different colored LEDs to give the user <i><u>feedback</i></u>
-      on what is being displayed at the moment. A red LED can be used to display
-      the timer like in the image below. Now a days LEDs can show multiple colors
-      according to the voltage fed to them. If those LEDs are used, different
-       colors can be displayed.
-    </p>
+      <p>
+        When I check the display, I see in very tiny letters saying cook. Now I
+        have to click start/stop button or reset it and give a new time. This
+        seemingly small clicks to heat my water is very annoying. Even though
+        there is some indication that time of the day is being displayed with, ':'
+        is blinking which is hardly noticeable at a single glance.
+      </p>
 
-    <img src="./project-photos/timer.PNG" width="200" id="timer">
+      <p>
+        <b>Solution</b>: Add different colored LEDs to give the user <i><u>feedback</i></u>
+        on what is being displayed at the moment. A red LED can be used to display
+        the timer like in the image below. Now a days LEDs can show multiple colors
+        according to the voltage fed to them. If those LEDs are used, different
+        colors can be displayed.
+      </p>
 
-    <p>
-      Alternatively, a new feature can be added to the microwave. If cooking
-      stops in the middle, the timer should reset after a certain period of time.
-      There is no use in preserving the remaining cooking time hours after the
-      timer is stopped in the middle.
-    </p>
-  </div>
-  <div id="stop_clear" , class="problem">
-    <h4> Stop/Clear button </h4>
-    <a href=#problems id="top"> To the top &#10595; </a></br>
-    <img src="./project-photos/stop_clear.jpg" width="200" id="stop_clear">
-    <p>
-      The stop/clear button on my microwave has a small closed and open lock saying
-      "hold"
-    </p>
-    <p>
-      I have no idea what it does and I have tried to hold the button down to see
-      if it locks my microwavave's door.
-    </p>
-  </div>
-  <div id="power_level" class="problem">
-    <h3> Power level </h3>
-    <a href=#problems id="top"> To the top &#10595; </a></br>
-    <p>
-      One of the <b>Rare uses</b> that I can think of is selecting the power level
-      for the cooking. Once in a lifetime I will try a recepie which will tell me
-      to select the power level. I have tried it in the past and I was not able to
-      figure it out how to set the power level.<i><u>Microwave telling me how to
-      use this option </i></u>This control unit has only one mechanism of telling me
-      that it is the wrong option, which is beeping twice.
-    </p>
-    <p>
-      while working this report I was able to figure out how to select power level.
-       Even though I was able to figure it out after few tries(while hurting my fingers)
-       I was still confused on what the numbers meant. <i><u>Common mistake</i></u>
-       I was confused on when to select the power level, before clicking start or
-       after start as I was able to change power level to some unknown level.
-       See the below gif.
-    </p>
-    <img src="./project-photos/power_level.gif" width="400" id="power_level">
-  </div>
-  <div id=solution>
-    <h2>Solution:</h2>
-      <img src="./project-photos/screens.png" width="800" id="screens">
-  </div>
+      <img id="pro_img" src="./project-photos/timer.PNG" width="200" id="timer">
+
+      <p>
+        Alternatively, a new feature can be added to the microwave. If cooking
+        stops in the middle, the timer should reset after a certain period of time.
+        There is no use in preserving the remaining cooking time hours after the
+        timer is stopped in the middle.
+      </p>
+    </div>
+    <div id="stop_clear" , class="problem">
+      <h3> Stop/Clear button </h3>
+      <img id="pro_img" src="./project-photos/stop_clear.jpg" width="200" id="stop_clear">
+      <p>
+        The stop/clear button on my microwave has a small closed and open lock saying
+        "hold"
+      </p>
+      <p>
+        I have no idea what it does and I have tried to hold the button down to see
+        if it locks my microwavave's door.
+      </p>
+    </div>
+    <div id="power_level" class="problem">
+      <h3> Power level </h3>
+      <p>
+        One of the <b>Rare uses</b> that I can think of is selecting the power level
+        for the cooking. Once in a lifetime I will try a recepie which will tell me
+        to select the power level. I have tried it in the past and I was not able to
+        figure it out how to set the power level.<i><u>Microwave telling me how to
+            use this option </i></u>This control unit has only one mechanism of telling me
+        that it is the wrong option, which is beeping twice.
+      </p>
+      <p>
+        while working this report I was able to figure out how to select power level.
+        Even though I was able to figure it out after few tries(while hurting my fingers)
+        I was still confused on what the numbers meant. <i><u>Common mistake</i></u>:
+        I was confused on when to select the power level, before clicking start or
+        after start as I was able to change power level to some unknown level.
+        See the below gif.
+      </p>
+      <img id="pro_img" src="./project-photos/power_level.gif" width="400" id="power_level">
+    </div>
+    <div id=solution>
+      <h2>Solution</h2>
+      <img id="pro_img" src="./project-photos/screens.png" width="800" id="screens">
+      <p>
+        For my design, I will be having 3 screens. I will be explaining how I will be overcoming
+        the desgin flaws explained above using the three screens that I will be implementing
+        using processing.
+      </p>
+      <h4>First screen</h4>
+      <p>
+          In the first screen, My new microwave will have a seven segment display,
+          to show the time. Below that, today's date. Lastly, start button.
+      </p>
+      <p>
+        My first design flaw being the button being very hard to press. With the
+        use of touchscreen, my main flaw automatically is solved.
+      </p>
+      <p>
+        Next minor flaw with the buttons is that there are too many. In total I will be having 5
+        buttons across all of the microwave options.
+      </p>
+      <h4> Second screen</h4>
+      <p>
+        In the second screen the microwave oven lets the user to input time and
+        select power level.
+      </p>
+      <p>
+          Now for inputting the time, I have used controlP5 knob. I have preset time
+          values for, 30 secs, 1 minute, 5 minutes, 10 minutes, 30 minutes, 45 minutes,
+          60 minutes and 90 minutes.
+      </p>
+      <p>
+        Power level is controlP5 slider with three values: 800, 1000, 1200. Default is
+        800 Watts.
+      </p>
+      <p>
+        User after selecting the time and power level, if they click the "Go" button,
+        they will be taken to the final screen.
+      </p>
+      <h4>Third screen</h4>
+      <p>
+        In the third screen the user will now see the countdown timer and an option to clear.
+        If the user hits clear he will be taken to the first screen.
+      </p>
+    </div>
+
 </body>
